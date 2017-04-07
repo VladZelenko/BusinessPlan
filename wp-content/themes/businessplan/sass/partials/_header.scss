@@ -1,0 +1,140 @@
+.site-header {
+	margin-bottom: 100px;
+	border: 2px solid green;
+}
+.intro {
+	width: 100%;
+	background-color: #e5eef0;
+	.container {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+		&:before, &:after {display: none;}
+	}
+	h2 {
+		color: #93a1a7;
+		font: 400 13px/50px $primary_font;
+		text-transform: uppercase;
+	}
+	.head-contact {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		.fa {padding-right: 10px;}
+		a {text-transform: uppercase;}
+		li {
+			padding-right: 55px;
+			&:last-child(){padding-right: 20px;}
+		}
+	}
+}
+.head-nav-menu {
+	width: 100%;
+	background-color: $additional_color;
+	box-shadow: 3px 1px 3px #000000;
+	.logo {
+		margin-top: 15px;  //лого відступ
+		float: left;
+	}
+	.head-menu {float: right}
+}
+.nav {
+	min-height: 65px; //высота конетейнера меню
+	display: flex;
+	align-items: center;
+}
+.nav li a,
+#touch-menu {
+	display: block;
+	padding: 10px 20px;
+	color: $secondary_font_color;
+	font: 700 14px/24px $primary_font;
+	text-transform: uppercase;
+}
+.nav li a:hover, #touch-menu:hover, .nav li:hover {
+	color: $accent_color;
+	text-decoration: none;
+	background-color: transparent;
+	transition: all .3s ease-in-out;
+}
+#touch-menu {display: none;}
+// #masthead{
+//    top: 0;   //отступ шапки от верха
+//    position: fixed;
+//    z-index: 1000;
+//    width:100%;
+//    height:50px;
+//  }
+.hero {
+	width: 100%;
+	min-height: 310px;
+	background-color: #8d8d8d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .head-nav-menu .container	{
+// 	min-height: 65px;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	&:before, &:after {display: none;}
+// }
+// h1.logo {
+// 	display: block;
+// 	border: 1px solid red;
+// }
+// .head-menu {
+// 	display: flex;
+// 	align-items: center;
+// 	border: 1px solid red;
+// }
+// .nav {
+// 	display: flex;
+// 	justify-content: flex-end;
+// }
+// .nav li a,
+// #touch-menu {
+// 	display: block;
+// 	padding: 10px 15px;
+// 	color: $secondary_font_color;
+// 	font: 700 14px/24px $primary_font;
+// 	text-transform: uppercase;
+// }
+
+// .nav li a:hover {
+// 	color: $secondary_font_color;
+// 	text-decoration: none;
+// }
+// #touch-menu:hover {color: $secondary_font_color;}
+// #touch-menu {display: none;}

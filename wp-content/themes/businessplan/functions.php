@@ -42,6 +42,10 @@ function businessplan_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+
+	//Site logotype
+	add_theme_support( 'custom-logo' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'businessplan' ),
@@ -107,9 +111,13 @@ add_action( 'widgets_init', 'businessplan_widgets_init' );
 function businessplan_scripts() {
 	wp_enqueue_style( 'businessplan-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'jq', get_template_directory_uri() . '/libs/jquery/dist/jquery.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'businessplan-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/libs/bootstrap-sass/assets/javascripts/bootstrap.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/libs/slick-carousel/slick/slick.min.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'businessplan-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'customJs', get_template_directory_uri() . '/js/custom.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
