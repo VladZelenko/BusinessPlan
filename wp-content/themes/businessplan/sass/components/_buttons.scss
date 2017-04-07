@@ -1,0 +1,9 @@
+.primary-btn {
+	display: block;
+	text-align: center;
+	font-family: $primary_font;
+	&:hover {
+		transition: all .4s ease-in-out;
+		text-decoration: none;
+	}
+}

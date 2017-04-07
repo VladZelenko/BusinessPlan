@@ -8549,7 +8549,7 @@ button.close {
 
 .site-header {
   margin-bottom: 100px;
-  border: 2px solid green; }
+  min-height: 425px; }
 
 .intro {
   width: 100%; }
@@ -8644,11 +8644,18 @@ button.close {
   min-height: 310px; }
 
 .site-footer {
-  width: 100%;
-  min-height: 425px;
-  background-color: #ccc; }
+  min-height: 425px; }
   .site-footer .copy-right {
     background-color: #fff; }
+
+.primary-btn {
+  display: block;
+  text-align: center;
+  font-family: "Raleway", sans-serif; }
+  .primary-btn:hover {
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    text-decoration: none; }
 
 @media (min-width: 320px) and (max-width: 768px) {
   .head-nav-menu .head-menu {

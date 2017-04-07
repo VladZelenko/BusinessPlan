@@ -11,17 +11,14 @@
 
 <div class="blog-post">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+		<?php the_post_thumbnail(); ?>
 		<header>
-			<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			<h2 class="title"><?php the_title(); ?></h2>
 			<ul class="post-info">
 				<li class="info author-post">Posted by: <?php the_author_posts_link() ?></li>
 				<li class=" info date">Date: <a href="<?php get_posts(); ?>"><?php the_time('F j Y'); ?></a></li>
 			</ul>
 		</header>
-		<?php the_excerpt(); ?>
-		<footer>
-			<a href="<?php the_permalink(); ?>" class="primary-btn"> <?php echo get_theme_mod('post_btn_name'); ?></a>
-		</footer>
+		<?php the_content('comments'); ?>
 	</article>
 </div>
