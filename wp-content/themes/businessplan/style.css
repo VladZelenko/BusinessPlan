@@ -8552,8 +8552,7 @@ button.close {
   border: 2px solid green; }
 
 .intro {
-  width: 100%;
-  background-color: #e5eef0; }
+  width: 100%; }
   .intro .container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -8603,7 +8602,6 @@ button.close {
 
 .head-nav-menu {
   width: 100%;
-  background-color: #ffffff;
   -webkit-box-shadow: 3px 1px 3px #000000;
           box-shadow: 3px 1px 3px #000000; }
   .head-nav-menu .logo {
@@ -8643,8 +8641,7 @@ button.close {
 
 .hero {
   width: 100%;
-  min-height: 310px;
-  background-color: #8d8d8d; }
+  min-height: 310px; }
 
 .site-footer {
   width: 100%;

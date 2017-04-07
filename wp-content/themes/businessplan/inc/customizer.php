@@ -15,8 +15,13 @@ function businessplan_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+	//+++++++++++++++++++++++++++++++++++++++++GENERAL SETTINGS THEME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-	//****************************BLOG PANELS and SECTIONS****************************************
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+	//++++++++++++++++++++++++++++++++++++++++BLOG PANELS: SECTIONS, SETTINGS AND CONTROL+++++++++++++++++++++++++++++++++++++++
 	$wp_customize->add_panel( 'blog_panel', array(
 		'title' => 'Blog page',
 		'priority' => 10,
@@ -36,11 +41,58 @@ function businessplan_customize_register( $wp_customize ) {
 		'priority'   => 30,
 		'panel'			 => 'blog_panel',
 		));
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+	//++++++++++++++++++++++++++++++++++++++++SINGLE POST: SECTIONS, SETTINGS AND CONTROL+++++++++++++++++++++++++++++++++++++++
+	$wp_customize->add_panel( 'single_post_panel', array(
+		'title' => 'Single post page',
+		'priority' => 20,
+		));
+	$wp_customize->add_section( 'header_single_post' , array(
+		'title'      => __( 'Header', 'businessplan' ),
+		'priority'   => 10,
+		'panel'			 => 'single_post_panel',
+		));
+	$wp_customize->add_section( 'comments_single_post' , array(
+		'title'      => __( 'Comments', 'businessplan' ),
+		'priority'   => 20,
+		'panel'			 => 'single_post_panel',
+		));
+	$wp_customize->add_section( 'footer_single_post' , array(
+		'title'      => __( 'Footer', 'businessplan' ),
+		'priority'   => 30,
+		'panel'			 => 'single_post_panel',
+		));
 	//**********************************************************************************************
+
+
+	//++++++++++++++++++++++++++++++++++++++++HOME PAGE: SECTIONS, SETTINGS AND CONTROL+++++++++++++++++++++++++++++++++++++++
+	$wp_customize->add_panel( 'home_panel', array(
+		'title' => 'Home page',
+		'priority' => 30,
+		));
+	$wp_customize->add_section( 'header_home_page' , array(
+		'title'      => __( 'Header', 'businessplan' ),
+		'priority'   => 10,
+		'panel'			 => 'home_panel',
+		));
+	$wp_customize->add_section( 'content_home_page' , array(
+		'title'      => __( 'Content', 'businessplan' ),
+		'priority'   => 20,
+		'panel'			 => 'home_panel',
+		));
+	$wp_customize->add_section( 'footer_home_page' , array(
+		'title'      => __( 'Footer', 'businessplan' ),
+		'priority'   => 30,
+		'panel'			 => 'home_panel',
+		));
+	//**********************************************************************************************
+
 
 	//***************************HEADER*************************************************************
 	//
-
+	//
 	//nav menu font color
 	$wp_customize->add_setting('navmenu_font_color', array( 'default'=> ''));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navmenu_font_color', array(
@@ -70,6 +122,15 @@ function businessplan_customize_register( $wp_customize ) {
 		'priority'	 => '50',
 		)));
 	//background top navmenu - end
+
+	//background image
+	$wp_customize->add_setting('bg_image_header', array( 'default'=> ''));
+	 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bg_image_header', array(
+        'label'      => __( 'Image Contact', 'blog_name' ),
+        'section'    => 'header_section',
+        'settings'   => 'bg_image_header',
+    ) ) );
+	//background image - end
 	//
 	//**************************************************************************************************
 
@@ -109,7 +170,7 @@ function businessplan_customize_register( $wp_customize ) {
 	//info posts
 	$wp_customize->add_setting('info_post_color', array( 'default'=> ''));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'info_post_color', array(
-		'label'      => __( 'Title posts info', 'businessplan' ),
+		'label'      => __( 'Color of additional information', 'businessplan' ),
 		'section'    => 'content_section',
 		'settings'   => 'info_post_color',
 		'priority'	 => '40',
@@ -249,6 +310,14 @@ function mytheme_customize_css(){
 
 		h2.widget-title {background-color: <?php echo get_theme_mod('title_background_wigets'); ?>;}
 		.head-nav-menu {background-color: <?php echo get_theme_mod('bg_top_navmenu'); ?>;}
+		.site-header {
+			background-image: url('<?php echo get_theme_mod('bg_image_header'); ?>') ;
+			background-size: cover;
+			width: 100%;
+			min-height: auto;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
 		.site-footer {background-color: <?php echo get_theme_mod('footer_bg'); ?>;}
 		.post {background-color: <?php echo get_theme_mod('bg_posts'); ?>;}
 	</style>
